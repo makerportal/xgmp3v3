@@ -1,5 +1,10 @@
-# # Calibrating Pressure Transducer XGZP6897A
+##############################################
+#
+# Calibrating Pressure Transducer XPMP3v3
 # with Manual Manometer and Arduino
+#
+# by Joshua Hrisko, Maker Portal LLC (c) 2021
+#
 ##############################################
 #
 #
