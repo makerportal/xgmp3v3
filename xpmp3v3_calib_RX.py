@@ -96,6 +96,13 @@ g   = 9.81 # gravity [m/s^2]
 #                                  9023918.0,9466900.0,9153698.0,8907830.0,8688792.0,8784272.0] # raw ADC vals
 Volt_vals = (V_ref*np.divide(adc_vals,ADC_res)) # response of 24-bit XPMP3v3 in [mV]
 P_vals   = (rho_2-rho_1)*g*np.array(h_vals)/(1000.0*1000.0) # pressure approx in [kPa]
+
+Volt_vals = np.array([0.77472656, 0.9580957 , 1.09505859, 1.23137695, 1.32902344,
+       1.41796875, 1.44697266, 1.57523437, 1.70800781, 1.84980469,
+       2.0109375 ])
+P_vals = np.array([-1.22888394, -0.87721604, -0.65546989, -0.36827444, -0.1856025 ,
+       -0.01953711,  0.04493534,  0.31845482,  0.60174285,  0.86940119,
+        1.194694  ])
 #
 ######################################################
 # Theory Approximations
@@ -133,12 +140,13 @@ mape_span = np.nanmean(np.abs(P_perc_span)) # mean absolute percent error of spa
 ######################################################
 #
 fig,ax = plt.subplots(figsize=(14,8))
-l2, = ax.plot(Volt_vals,P_vals,color=plt.cm.Set1(1),linestyle='',marker='o',markersize=10,zorder=99)
+l2, = ax.plot(Volt_vals,P_vals,color=plt.cm.Set1(0),linestyle='',marker='o',markersize=10,
+              zorder=99,alpha=0.9)
 
 ax.set_xlabel('XPMP3v3 Voltage, $V_R$ [V]',fontsize=16)
 ax.set_ylabel('Manometer Pressure, $P$ [kPa]',fontsize=16)
 ax.text(2.0, -1.5, 'Data Statistics:\n$R^2$      = '+'{0:2.2f}\nRMSE = {1:2.2f} kPa\n'.format(R_sq,rmse)+\
-                    'MAPE = {0:2.2f}%\nMAE   = {1:2.2f} kPa\nBias   = {2:2.2f} kPa'.format(mape,mae,bias),
+                    'PEFS = {0:2.2f}%\nMAE   = {1:2.2f} kPa\nBias   = {2:2.2f} kPa'.format(mape_span,mae,bias),
             size=16,ha="left", va="center",bbox=dict(boxstyle="round",
                        ec=(0.9, 0.9, 0.9),fc=(1.0, 1.0, 1.0),pad = 0.75))
 # #
@@ -147,8 +155,17 @@ ax.text(2.0, -1.5, 'Data Statistics:\n$R^2$      = '+'{0:2.2f}\nRMSE = {1:2.2f} 
 # ######################################################
 # #
 # # directly from datasheet
-t1, = ax.plot(V_span,P_theory,linewidth=4,color=plt.cm.Set1(2)) # raw theory
+t1, = ax.plot(V_span,P_theory,linewidth=4,color='k') # raw theory
+
+# plotting error bounds
+P_min = P_theory-(0.025*2.0*P_bound)
+P_max = P_theory+(0.025*2.0*P_bound)
+t2 = ax.plot(V_span,P_min,linestyle='--',color='k',alpha=0.5) # raw theory
+t2 = ax.plot(V_span,P_max,linestyle='--',color='k',alpha=0.5) # raw theory
+t2 = ax.fill_between(V_span,P_theory-(0.025*2.0*P_bound),P_theory+(0.025*2.0*P_bound),
+                     color='#4b4b4b',alpha=0.5) # raw theory
 
 # legend marking each line on the plot
-ax.legend([l2,t1],['Data','Theory Prediction'],fontsize=16,bbox_to_anchor=(0,0,0.45,0.925))
+ax.legend([l2,t1,t2],['Test Data','Theory','Full-Scale Error Bounds'],fontsize=16,bbox_to_anchor=(0,0,0.45,0.925))
+fig.savefig('xpmp3v3_calibration_curve.png',dpi=300,bbox_inches='tight')
 plt.show()
