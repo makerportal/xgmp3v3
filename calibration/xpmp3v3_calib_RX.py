@@ -1,6 +1,6 @@
 ##############################################
 #
-# Calibrating Pressure Transducer XPMP3v3
+# Calibrating Pressure Transducer XGMP3v3
 # with Manual Manometer and Arduino
 #
 # by Joshua Hrisko, Maker Portal LLC (c) 2021
@@ -90,7 +90,7 @@ rho_2 = 997.0 # density of water [kg/m^3]
 rho_1 = 1.225 # density of air [kg/m^3]
 g   = 9.81 # gravity [m/s^2]
 #
-Volt_vals = (V_ref*np.divide(adc_vals,ADC_res-1.0)) # response of 24-bit XPMP3v3 in [mV]
+Volt_vals = (V_ref*np.divide(adc_vals,ADC_res-1.0)) # response of 24-bit XGMP3v3 in [mV]
 P_vals   = (rho_2-rho_1)*g*np.array(h_vals)/(1000.0*1000.0) # pressure approx in [kPa]
 #
 Volt_vals = np.array([0.77472656, 0.9580957 , 1.09505859, 1.23137695, 1.32902344,
@@ -139,7 +139,7 @@ fig,ax = plt.subplots(figsize=(14,8))
 l2, = ax.plot(Volt_vals,P_vals,color=plt.cm.Set1(0),linestyle='',marker='o',markersize=10,
               zorder=99,alpha=0.9)
 
-ax.set_xlabel('XPMP3v3 Voltage, $V_R$ [V]',fontsize=16)
+ax.set_xlabel('XGMP3v3 Voltage, $V_R$ [V]',fontsize=16)
 ax.set_ylabel('Manometer Pressure, $P$ [kPa]',fontsize=16)
 ax.text(2.0, -1.5, 'Data Statistics:\n$R^2$      = '+'{0:2.2f}\nRMSE = {1:2.2f} kPa\n'.format(R_sq,rmse)+\
                     'PEFS = {0:2.2f}%\nMAE   = {1:2.2f} kPa\nBias   = {2:2.2f} kPa'.format(mape_span,mae,bias),
@@ -161,7 +161,8 @@ t2 = ax.plot(V_span,P_max,linestyle='--',color='k',alpha=0.5) # raw theory
 t2 = ax.fill_between(V_span,P_theory-(0.025*2.0*P_bound),P_theory+(0.025*2.0*P_bound),
                      color='#4b4b4b',alpha=0.5) # raw theory
 
+
 # legend marking each line on the plot
 ax.legend([l2,t1,t2],['Test Data','Theory','Full-Scale Error Bounds'],fontsize=16,bbox_to_anchor=(0,0,0.45,0.925))
-fig.savefig('xpmp3v3_calibration_curve.png',dpi=300,bbox_inches='tight')
+fig.savefig('xgmp3v3_calibration_curve.png',dpi=300,bbox_inches='tight')
 plt.show()
