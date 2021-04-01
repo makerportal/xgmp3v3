@@ -17,7 +17,7 @@ The XGMP3v3 library can be downloaded using git:
 # - Wiring Diagram -
 
 The wiring between the XGMP3v3 and an Arduino Uno board is given below:
-![XGMP3v3 Arduino Wiring](/images/xgmp3v3_wiring.jpg)
+![XGMP3v3 Arduino Wiring](/images/xgmp3v3_sensor_wiring.jpeg)
 | Arduino Uno | XGMP3v3 |
 | --- | --- |
 | 3V3 | VCC |
