@@ -41,7 +41,7 @@ The resulting output can be viewed from the serial port:
 
 The XGMP3v3 can be calibrated using the two scripts contained within the 'calibration' folder. The first file (ending in .ino) needs to be uploaded to an Arduino board. The second file (.py) needs to be run on a computer with the Arduino board connected via USB. The following should be outputted as an example calibration plot:
 
-![XGMP3v3 Calibration Curve](/images/xgmp3v3_calibration_curve.png)
+![XGMP3v3 Calibration Curve](/images/xgmp3v3_calib_curve.png)
 
 
 <a id="pitot"></a>
