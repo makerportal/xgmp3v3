@@ -28,4 +28,5 @@ The wiring between the XGMP3v3 and an Arduino Uno board is given below:
 # - XGMP3v3 Example with an Arduino Uno Board -
 
 The example code used to approximate differential pressure in [kPa] can be found at the code:
- - 
+
+- xgmp3v3_main.ino 
