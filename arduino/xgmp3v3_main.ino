@@ -1,5 +1,5 @@
 //
-// Arduino code Used to read analog data from XPMP3v3 Differential Pressure
+// Arduino code Used to read analog data from XGMP3v3 Differential Pressure
 // Sensor and approximate pressure in [kPa]
 // 
 // by Joshua Hrisko, Maker Portal LLC (c) 2021
