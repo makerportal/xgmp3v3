@@ -2,7 +2,7 @@
 XGMP3V3 Differential Pressure Sensor for Arduino and Raspberry Pi. This repository houses codes for approximating differential pressure from the XGMP3v3 sensor on an Arduino board or analog-to-digital converter (ADC) connected to a Raspberry Pi. Calibration codes are also given, which prints raw values from an Arduino board and reads the raw values into a Python program via the serial port. 
 
 Get your XGMP3v3 Sensor: [XGMP3v3 Differential Pressure Sensor for Arduino and Raspberry Pi](https://makersportal.com/shop/xgmp3v3-differential-pressure-sensor-for-arduino-and-raspberry-pi) <br>
-Follow along with the full tutorial: https://makersportal.com/
+XGMP3v3 Sensor Datasheet: https://makersportal.com/s/XGMP3v3_Datasheet.pdf
 
 ### JUMP TO:
 <a href="#wiring">- Wiring Diagram</a><br>
