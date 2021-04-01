@@ -1,5 +1,5 @@
 /**
- * Code Used to send raw signal from XPMP3v3 Differential Pressure Sensor
+ * Code Used to send raw signal from XGMP3v3 Differential Pressure Sensor
  * to Python to be read against manometer for calibration
  * 
  * by Joshua Hrisko, Maker Portal LLC (c) 2021
