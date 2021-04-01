@@ -8,6 +8,7 @@ XGMP3v3 Sensor Datasheet: https://makersportal.com/s/XGMP3v3_Datasheet.pdf
 <a href="#wiring">- Wiring Diagram</a><br>
 <a href="#examples">- XGMP3v3 Example with an Arduino Uno Board</a><br>
 <a href="#calib">- Calibration with Arduino and Python3</a><br>
+<a href="#pitot">- Arduino Pitot Tube Airspeed Sensor</a><br>
 
 The XGMP3v3 library can be downloaded using git:
 
