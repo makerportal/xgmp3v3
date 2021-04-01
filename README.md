@@ -6,7 +6,7 @@ Follow along with the full tutorial: https://makersportal.com/
 
 ### JUMP TO:
 <a href="#wiring">- Wiring Diagram</a><br>
-<a href="#examples">- XGMP3v3 Example with Arduino</a><br>
+<a href="#examples">- XGMP3v3 Example with an Arduino Uno Board</a><br>
 <a href="#calib">- Calibration with Arduino and Python3</a><br>
 
 The XGMP3v3 library can be downloaded using git:
@@ -23,3 +23,9 @@ The wiring between the XGMP3v3 and an Arduino Uno board is given below:
 | 3V3 | VCC |
 | GND | GND | 
 | A0 | OUT |
+
+<a id="examples"></a>
+# - XGMP3v3 Example with an Arduino Uno Board -
+
+The example code used to approximate differential pressure in [kPa] can be found at the code:
+ - 
