@@ -6,21 +6,20 @@ Follow along with the full tutorial: https://makersportal.com/
 
 ### JUMP TO:
 <a href="#wiring">- Wiring Diagram</a><br>
-<a href="#examples">- SSD1306 Examples with Pico</a><br>
-<a href="#mapping">- Image Mapping with Python3</a><br>
+<a href="#examples">- XGMP3v3 Example with Arduino</a><br>
+<a href="#calib">- Calibration with Arduino and Python3</a><br>
 
-The RPi Pico WS2812 library can be downloaded using git:
+The XGMP3v3 library can be downloaded using git:
 
-    git clone https://github.com/makerportal/rpi-pico-ssd1306
+    git clone https://github.com/makerportal/xgmp3v3
 
 <a id="wiring"></a>
 # - Wiring Diagram -
 
-The wiring between the Pico and SSD1306 OLED is given below:
-![SSD1306 RPi Pico Wiring](/images/ssd1306_w_RPi_Pico_white.jpg)
-| Pico | SSD1306 |
+The wiring between the XGMP3v3 and an Arduino Uno board is given below:
+![XGMP3v3 Arduino Wiring](/images/xgmp3v3_wiring.jpg)
+| Arduino Uno | XGMP3v3 |
 | --- | --- |
-| 3V3 (Pin 36) | VDD |
-| GND (Pin 38) | GND | 
-| I2C1_SDA (GP26) | SDA |
-| I2C1_SCL (GP27) | SCK |
+| 3V3 | VCC |
+| GND | GND | 
+| A0 | OUT |
