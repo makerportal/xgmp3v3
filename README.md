@@ -31,6 +31,10 @@ The example code used to approximate differential pressure in [kPa] can be found
 
 - xgmp3v3_main.ino 
 
+The resulting output can be viewed from the serial port:
+
+![XGMP3v3 Serial Output](/images/xgmp3v3_serial_ouptut.png)
+
 <a id="calib"></a>
 # - Calibration with Arduino and Python3 -
 
