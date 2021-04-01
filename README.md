@@ -30,3 +30,10 @@ The wiring between the XGMP3v3 and an Arduino Uno board is given below:
 The example code used to approximate differential pressure in [kPa] can be found at the code:
 
 - xgmp3v3_main.ino 
+
+<a id="calib"></a>
+# - Calibration with Arduino and Python3 -
+
+The XGMP3v3 can be calibrated using the two scripts contained within the 'calibration' folder. The first file (ending in .ino) needs to be uploaded to an Arduino board. The second file (.py) needs to be run on a computer with the Arduino board connected via USB. The following should be outputted as an example calibration plot:
+
+![XGMP3v3 Arduino Wiring](/images/xgmp3v3_sensor_wiring.jpeg)
