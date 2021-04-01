@@ -1,5 +1,5 @@
 # XGMP3v3 Differential Pressure Sensor
-XGMP3V3 Differential Pressure Sensor for Arduino and Raspberry Pi. This repository houses codes for approximating differential pressure from the XGMP3v3 sensor on an Arduino board or analog-to-digital converter (ADC) connected to a Raspberry Pi. Calibration codes are also given, which prints raw values from an Arduino board and reads the raw values into a Python program via the serial port. 
+XGMP3V3 Differential Pressure Sensor for Arduino and Raspberry Pi. This repository houses codes for approximating differential pressure from the XGMP3v3 sensor on an Arduino board or analog-to-digital converter (ADC) connected to a Raspberry Pi. Calibration codes are also given, which prints raw values from an Arduino board and reads the raw values into a Python program via the serial port. There is also a script given that allows users to approximate airspeed or velocity using a pitot tube attached to the XGMP3v3 sensor.
 
 Get your XGMP3v3 Sensor: [XGMP3v3 Differential Pressure Sensor for Arduino and Raspberry Pi](https://makersportal.com/shop/xgmp3v3-differential-pressure-sensor-for-arduino-and-raspberry-pi) <br>
 XGMP3v3 Sensor Datasheet: https://makersportal.com/s/XGMP3v3_Datasheet.pdf
@@ -41,3 +41,11 @@ The resulting output can be viewed from the serial port:
 The XGMP3v3 can be calibrated using the two scripts contained within the 'calibration' folder. The first file (ending in .ino) needs to be uploaded to an Arduino board. The second file (.py) needs to be run on a computer with the Arduino board connected via USB. The following should be outputted as an example calibration plot:
 
 ![XGMP3v3 Calibration Curve](/images/xgmp3v3_calibration_curve.png)
+
+
+<a id="pitot"></a>
+# - Arduino Pitot Tube Airspeed Sensor -
+
+The following script allows users to attach a pitot tube to the XGMP3v3 differential pressure sensor to approximate airspeed or velocity of a drone, aircraft, or other rotorcraft:
+
+- xgmp3v3_pitot_tube.ino
