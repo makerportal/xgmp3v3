@@ -94,7 +94,7 @@ g   = 9.81 # gravity [m/s^2]
 # MPS_ADC_raw_vals = [9830572.0,9887678.0,10054668.0,10292554.0,10405446.0,
 #                                  10726234.0,10497706.0,10608056.0,9601672.0,9351684.0,
 #                                  9023918.0,9466900.0,9153698.0,8907830.0,8688792.0,8784272.0] # raw ADC vals
-Volt_vals = (V_ref*np.divide(adc_vals,ADC_res)) # response of 24-bit XPMP3v3 in [mV]
+Volt_vals = (V_ref*np.divide(adc_vals,ADC_res-1.0)) # response of 24-bit XPMP3v3 in [mV]
 P_vals   = (rho_2-rho_1)*g*np.array(h_vals)/(1000.0*1000.0) # pressure approx in [kPa]
 
 Volt_vals = np.array([0.77472656, 0.9580957 , 1.09505859, 1.23137695, 1.32902344,
